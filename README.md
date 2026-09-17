@@ -1,5 +1,23 @@
-# NewsAPI
-## Section 1: Python Script 
+# NewsAPI Data Pipeline
+
+A containerized ETL pipeline that extracts news data from the NewsAPI, processes it with Python, stores the resulting CSV files in Amazon S3, and loads the data into Amazon Redshift for analytics.
+
+## Architecture
+
+```text
+NewsAPI
+   │
+   ▼
+Python
+   │
+   ▼
+Amazon S3
+   │
+   ▼
+Amazon Redshift
+```
+
+The pipeline is designed to run daily. Data is extracted and transformed with Python, archived as date-based CSV files in Amazon S3, and then loaded from S3 into Amazon Redshift using Redshift's `COPY` command.
 
 ### Architecture:
 
